@@ -14,7 +14,8 @@
 - name: Install logstash.yml
   template:
     src: logstash.yml.j2
-    dest: "/etc/logstash/"
+    dest: "/etc/logstash/logstash.yml"
+    force: yes
     owner: logstash
     group: logstash
     mode: 0644

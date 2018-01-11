@@ -22,3 +22,6 @@ logstash_install_plugins:
 
 logstash_major_version: "6.x"
 logstash_version: "6.1.0"
+logstash_extra_options: {
+  
+  }

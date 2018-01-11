@@ -6,7 +6,7 @@
 
 - name: RedHat - add Elasticsearch repo
   become: yes
-  template: src=logstash.repo.j2 dest=/etc/yum.repos.d/logstash-{{ es_major_version }}.repo
+  template: src=logstash.repo.j2 dest=/etc/yum.repos.d/logstash-{{ logstash_major_version }}.repo
 
 - name: RedHat - Install Logstash
   become: yes
