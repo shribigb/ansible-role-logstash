@@ -5,10 +5,8 @@ logstash_elasticsearch_hosts:
   - http://localhost:9200
 
 logstash_install_input_output: true
-logstash_install_filters: true
-logstash_local_syslog_path: /var/log/syslog
-logstash_monitor_local_syslog: true
-
+logstash_install_plugins: []
+logstash_enable_xpack: true
 logstash_ssl: false
 logstash_ssl_dir: /etc/pki/logstash
 logstash_ssl_certificate_authority: ""
@@ -17,11 +15,10 @@ logstash_ssl_key_file: ""
 
 logstash_enabled_on_boot: yes
 
-logstash_install_plugins:
-  - logstash-input-beats
-
 logstash_major_version: "6.x"
 logstash_version: "6.1.0"
-logstash_extra_options: {
-  
+logstash_xpack_monitoring_enable: false
+logstash_xpack_management_enable: false
+logstash_extra_conf_options: {
+
   }

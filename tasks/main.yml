@@ -5,6 +5,8 @@
 - include: config.yml
 - include: ssl.yml
 - include: plugins.yml
+- include: x-pack.yml
+  when: logstash_enable_xpack == true
 
 - name: Ensure Logstash is started and enabled on boot.
   service:
