@@ -210,6 +210,12 @@ path.config: /etc/logstash/conf.d/*.conf
 # Where to find custom plugins
 # path.plugins: []
 
+{% if logstash_path_data is defined %}
+path.data: {{logstash_path_data}}
+{% endif %}
+{% if logstash_path_log is defined %}
+path.log: {{logstash_path_log}}
+{% endif %}
 {% if logstash_xpack_monitoring_enable == true %}
 xpack.monitoring.enabled: true
 xpack.monitoring.elasticsearch.username: {{ logstash_system_username }}
@@ -226,6 +232,6 @@ xpack.management.logstash.poll_interval: 5s
 xpack.management.pipeline.id: {{ logstash_management_pipeline_id_list }}
 {% endif %}
 
-{% if logstash_extra_options is defined %}
+{% if logstash_extra_conf_options is defined %}
 {{logstash_extra_conf_options | to_nice_yaml }}
 {% endif %}
